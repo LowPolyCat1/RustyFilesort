@@ -162,7 +162,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-LowPolyCat1 - [@LowPolyCat1](https://twitter.com/LowPolyCat1) - <lowpolycat1@example.com>
+LowPolyCat1 - [@LowPolyCat1](https://twitter.com/LowPolyCat1) - <Juliantepper2006+github@gmail.com>
 
 Project Link: [https://github.com/LowPolyCat1/RustyFilesort](https://github.com/LowPolyCat1/RustyFilesort)
 
@@ -171,7 +171,7 @@ Project Link: [https://github.com/LowPolyCat1/RustyFilesort](https://github.com/
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-- [othneildrew](https://github.com/othneildrew/Best-README-Template)
+- [othneildrew](https://github.com/othneildrew/Best-README-Template) for making this readme template
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -33,6 +33,7 @@ pub fn run_sorting() -> Result<(), errors::custom_errors::CustomError> {
         }
     };
 
+    // I know this is an abomination, I don't care
     tracing::info!("Sorting the files...");
     for entry in contents {
         match entry {

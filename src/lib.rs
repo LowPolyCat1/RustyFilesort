@@ -84,11 +84,6 @@ pub fn run_sorting() -> Result<(), errors::custom_errors::CustomError> {
         }
 
         let new_path = new_dir.join(direntry.file_name());
-        // if let Err(error) = tokio::fs::rename(&path, &new_path) {
-        //     tracing::error!("Error moving file: {:?}", error);
-        //     // return Err(errors::custom_errors::CustomError::Unknown);
-        //     continue;
-        // }
         futures.push(tokio::spawn(async move {
             if let Err(error) = tokio::fs::rename(&path, &new_path).await {
                 tracing::error!("Error moving file: {:?}", error);
@@ -96,8 +91,6 @@ pub fn run_sorting() -> Result<(), errors::custom_errors::CustomError> {
                 tracing::info!("Moved file {:?} to {:?}", path, new_path);
             }
         }));
-
-        // tracing::info!("Moved file {:?} to {:?}", path, new_path);
     }
     Ok(())
 }

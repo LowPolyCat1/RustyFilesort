@@ -1,3 +1,5 @@
+#![windows_subsystem = "windows"]
+
 use auto_sort::run_sorting;
 
 fn main() {

@@ -123,7 +123,7 @@ Use RustyFilesort to keep your downloads folder organized automatically. Simply 
 
 - [ ] Add support for custom sorting rules
 - [ ] Implement a GUI
-- [ ] Asynchronous Sorting
+- [x] Asynchronous Sorting
 - [x] Add support for multiple folders
 - [ ] Add schedule support
 

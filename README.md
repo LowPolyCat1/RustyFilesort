@@ -186,7 +186,7 @@ Project Link: [https://github.com/LowPolyCat1/RustyFilesort](https://github.com/
 [stars-url]: https://github.com/LowPolyCat1/RustyFilesort/stargazers
 [issues-shield]: https://img.shields.io/github/issues/LowPolyCat1/autosort_downloads.svg?style=for-the-badge
 [issues-url]: https://github.com/LowPolyCat1/RustyFilesort/issues
-[license-shield]: https://img.shields.io/github/license/LowPolyCat1/autosort_downloads.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/LowPolyCat1/RustyFilesort.svg?style=for-the-badge
 [license-url]: https://github.com/LowPolyCat1/RustyFilesort/blob/main/license.txt
 [Rust]: https://img.shields.io/badge/rust-000000?style=for-the-badge&logo=rust&logoColor=white
 [Rust-url]: https://www.rust-lang.org/

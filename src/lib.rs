@@ -3,15 +3,11 @@ pub mod tests;
 
 pub mod errors;
 
-use std::{
-    fs,
-    path::{Path, PathBuf},
-};
+use std::{fs, path::Path};
 
 use dirs;
-use tokio;
 
-pub async fn run_sorting() -> Result<(), errors::custom_errors::CustomError> {
+pub fn run_sorting() -> Result<(), errors::custom_errors::CustomError> {
     tracing::info!("Starting the sorting process...");
     let download_dir = match dirs::download_dir() {
         Some(pathbuf) => {

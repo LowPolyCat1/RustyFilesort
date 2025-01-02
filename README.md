@@ -8,7 +8,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![project_license][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+<!-- [![LinkedIn][linkedin-shield]][linkedin-url] -->
 
 <!-- PROJECT LOGO -->
 <br />
@@ -187,8 +187,6 @@ Project Link: [https://github.com/LowPolyCat1/RustyFilesort](https://github.com/
 [issues-shield]: https://img.shields.io/github/issues/LowPolyCat1/autosort_downloads.svg?style=for-the-badge
 [issues-url]: https://github.com/LowPolyCat1/RustyFilesort/issues
 [license-shield]: https://img.shields.io/github/license/LowPolyCat1/autosort_downloads.svg?style=for-the-badge
-[license-url]: https://github.com/LowPolyCat1/RustyFilesort/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/LowPolyCat1
+[license-url]: https://github.com/LowPolyCat1/RustyFilesort/blob/main/license.txt
 [Rust]: https://img.shields.io/badge/rust-000000?style=for-the-badge&logo=rust&logoColor=white
 [Rust-url]: https://www.rust-lang.org/

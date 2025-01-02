@@ -13,7 +13,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/LowPolyCat1/autosort_downloads">
+  <a href="https://github.com/LowPolyCat1/RustyFilesort">
     <img src="./images/icon.ico" alt="Logo" width="100" height="100">
   </a>
 
@@ -22,14 +22,14 @@
   <p align="center">
     Automatically sort your downloads folder with Rust
     <br />
-    <!-- <a href="https://github.com/LowPolyCat1/autosort_downloads"><strong>Explore the docs »</strong></a> -->
+    <!-- <a href="https://github.com/LowPolyCat1/RustyFilesort"><strong>Explore the docs »</strong></a> -->
     <!-- <br /> -->
     <br />
-    <a href="https://github.com/LowPolyCat1/autosort_downloads">View Demo</a>
+    <a href="https://github.com/LowPolyCat1/RustyFilesort">View Demo</a>
     ·
-    <a href="https://github.com/LowPolyCat1/autosort_downloads/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/LowPolyCat1/RustyFilesort/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/LowPolyCat1/autosort_downloads/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/LowPolyCat1/RustyFilesort/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -92,7 +92,7 @@ To get a local copy up and running follow these simple steps.
 1. Clone the repo
 
    ```sh
-   git clone https://github.com/LowPolyCat1/autosort_downloads
+   git clone https://github.com/LowPolyCat1/RustyFilesort
    ```
 
 2. Build the project
@@ -114,7 +114,7 @@ To get a local copy up and running follow these simple steps.
 
 Use RustyFilesort to keep your downloads folder organized automatically. Simply run the executable and let it sort your files based on predefined rules.
 
-<!-- _For more examples, please refer to the [Documentation](https://github.com/LowPolyCat1/autosort_downloads/wiki)_ -->
+<!-- _For more examples, please refer to the [Documentation](https://github.com/LowPolyCat1/RustyFilesort/wiki)_ -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -126,7 +126,7 @@ Use RustyFilesort to keep your downloads folder organized automatically. Simply 
 - [ ] Asynchronous Sorting
 - [x] Add support for multiple folders
 
-See the [open issues](https://github.com/LowPolyCat1/autosort_downloads/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/LowPolyCat1/RustyFilesort/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -148,7 +148,7 @@ Don't forget to give the project a star! Thanks again!
 
 ### Top contributors
 
-<a href="https://github.com/LowPolyCat1/autosort_downloads/graphs/contributors">
+<a href="https://github.com/LowPolyCat1/RustyFilesort/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=LowPolyCat1/autosort_downloads" alt="contrib.rocks image" />
 </a>
 
@@ -164,7 +164,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 LowPolyCat1 - [@LowPolyCat1](https://twitter.com/LowPolyCat1) - <lowpolycat1@example.com>
 
-Project Link: [https://github.com/LowPolyCat1/autosort_downloads](https://github.com/LowPolyCat1/autosort_downloads)
+Project Link: [https://github.com/LowPolyCat1/RustyFilesort](https://github.com/LowPolyCat1/RustyFilesort)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -178,15 +178,15 @@ Project Link: [https://github.com/LowPolyCat1/autosort_downloads](https://github
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/LowPolyCat1/autosort_downloads.svg?style=for-the-badge
-[contributors-url]: https://github.com/LowPolyCat1/autosort_downloads/graphs/contributors
+[contributors-url]: https://github.com/LowPolyCat1/RustyFilesort/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/LowPolyCat1/autosort_downloads.svg?style=for-the-badge
-[forks-url]: https://github.com/LowPolyCat1/autosort_downloads/network/members
+[forks-url]: https://github.com/LowPolyCat1/RustyFilesort/network/members
 [stars-shield]: https://img.shields.io/github/stars/LowPolyCat1/autosort_downloads.svg?style=for-the-badge
-[stars-url]: https://github.com/LowPolyCat1/autosort_downloads/stargazers
+[stars-url]: https://github.com/LowPolyCat1/RustyFilesort/stargazers
 [issues-shield]: https://img.shields.io/github/issues/LowPolyCat1/autosort_downloads.svg?style=for-the-badge
-[issues-url]: https://github.com/LowPolyCat1/autosort_downloads/issues
+[issues-url]: https://github.com/LowPolyCat1/RustyFilesort/issues
 [license-shield]: https://img.shields.io/github/license/LowPolyCat1/autosort_downloads.svg?style=for-the-badge
-[license-url]: https://github.com/LowPolyCat1/autosort_downloads/blob/master/LICENSE.txt
+[license-url]: https://github.com/LowPolyCat1/RustyFilesort/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/LowPolyCat1
 [Rust]: https://img.shields.io/badge/rust-000000?style=for-the-badge&logo=rust&logoColor=white

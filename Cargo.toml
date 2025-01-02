@@ -6,7 +6,7 @@ github = "lowpolycat1"
 authors = ["Julian Tepper <juliantepper2006+github@gmail.com>"]
 description = ""
 license_file = "./license.txt"
-repository = "https://github.com/LowPolyCat1/autosort_downloads"
+repository = "https://github.com/LowPolyCat1/RustyFilesort"
 publish = false
 
 [dependencies]

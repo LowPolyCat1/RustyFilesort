@@ -1,6 +1,6 @@
 #![windows_subsystem = "windows"]
 
-use auto_sort::run_sorting;
+use RustyFilesort::run_sorting;
 
 fn main() {
     let file_appender = tracing_appender::rolling::minutely("./logs", "debug.log");

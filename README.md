@@ -25,7 +25,7 @@
     <!-- <a href="https://github.com/LowPolyCat1/RustyFilesort"><strong>Explore the docs »</strong></a> -->
     <!-- <br /> -->
     <br />
-    <a href="https://github.com/LowPolyCat1/RustyFilesort">View Demo</a>
+    <!-- <a href="https://github.com/LowPolyCat1/RustyFilesort/">View Demo</a> -->
     ·
     <a href="https://github.com/LowPolyCat1/RustyFilesort/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
@@ -65,7 +65,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
+![Product Name Screen Shot](./images/sorting_example.gif)
 
 RustyFilesort is a tool to automatically organize your downloads folder using Rust. It helps keep your files sorted and easy to find.
 

@@ -42,6 +42,9 @@
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
+      <ul>
+        <li><a href="#Features">Features</a></li>
+      </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -74,6 +77,12 @@ RustyFilesort is a tool to automatically organize your downloads folder using Ru
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Features
+
+* Asynchronous sorting of files in the download directory
+
+* Automatic directory creation for file extensions
+
 <!-- GETTING STARTED -->
 ## Getting Started
 
@@ -81,7 +90,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-- Rust
+* Rust
 
   ```sh
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -121,11 +130,12 @@ Use RustyFilesort to keep your downloads folder organized automatically. Simply 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Add support for custom sorting rules
-- [ ] Implement a GUI
-- [x] Asynchronous Sorting
-- [x] Add support for multiple folders
-- [ ] Add schedule support
+* [ ] Add support for custom sorting rules
+* [ ] Implement a GUI
+* [x] Asynchronous Sorting
+* [x] Add support for multiple folders
+* [ ] Add schedule support
+* [ ] Add config files
 
 See the [open issues](https://github.com/LowPolyCat1/RustyFilesort/issues) for a full list of proposed features (and known issues).
 
@@ -172,7 +182,7 @@ Project Link: [https://github.com/LowPolyCat1/RustyFilesort](https://github.com/
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-- [othneildrew](https://github.com/othneildrew/Best-README-Template) for making this readme template
+* [othneildrew](https://github.com/othneildrew/Best-README-Template) for making this readme template
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

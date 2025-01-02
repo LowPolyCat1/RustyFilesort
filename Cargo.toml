@@ -1,14 +1,13 @@
 [package]
 name = "auto-sort"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 github = "lowpolycat1"
-authors = [""]
+authors = ["Julian Tepper <juliantepper2006+github@gmail.com>"]
 description = ""
 license_file = "./license.txt"
-repository = "https://github.com/lowpolycat1/auto-sort"
-twitter_handle = ""
-linkedin_username = ""
+repository = "https://github.com/LowPolyCat1/autosort_downloads"
+publish = false
 
 [dependencies]
 tracing = "0.1.41"
@@ -16,3 +15,15 @@ tracing-subscriber = "0.3.19"
 tracing-appender = "0.2.3"
 dirs = { version = "5.0.1" }
 thiserror = { version = "2.0.9" }
+
+
+[build-dependencies]
+windows_exe_info = "0.4.2"
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = 3
+debug = false
+panic = "abort"
+rpath = false

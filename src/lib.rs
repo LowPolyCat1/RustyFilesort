@@ -10,7 +10,7 @@ use std::{
 
 use dirs;
 
-fn get_download_dir() -> Result<PathBuf, errors::custom_errors::CustomError> {
+pub fn get_download_dir() -> Result<PathBuf, errors::custom_errors::CustomError> {
     match dirs::download_dir() {
         Some(pathbuf) => {
             tracing::info!("Download directory found: {:?}", pathbuf);
@@ -25,7 +25,7 @@ fn get_download_dir() -> Result<PathBuf, errors::custom_errors::CustomError> {
     }
 }
 
-fn get_content(download_dir: &Path) -> Result<fs::ReadDir, errors::custom_errors::CustomError> {
+pub fn get_content(download_dir: &Path) -> Result<fs::ReadDir, errors::custom_errors::CustomError> {
     match fs::read_dir(download_dir) {
         Ok(iterator) => {
             tracing::info!("Download directory read successfully");

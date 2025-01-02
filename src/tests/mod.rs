@@ -1,1 +1,1 @@
-pub mod tests;
+pub mod custom_tests;

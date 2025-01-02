@@ -3,16 +3,18 @@ pub mod tests;
 
 pub mod errors;
 
-use std::{fs, path::Path};
+use std::{
+    fs,
+    path::{Path, PathBuf},
+};
 
 use dirs;
 
-pub fn run_sorting() -> Result<(), errors::custom_errors::CustomError> {
-    tracing::info!("Starting the sorting process...");
-    let download_dir = match dirs::download_dir() {
+fn get_download_dir() -> Result<PathBuf, errors::custom_errors::CustomError> {
+    match dirs::download_dir() {
         Some(pathbuf) => {
             tracing::info!("Download directory found: {:?}", pathbuf);
-            pathbuf
+            Ok(pathbuf)
         }
         None => {
             tracing::error!("Could not find the download directory");
@@ -20,54 +22,73 @@ pub fn run_sorting() -> Result<(), errors::custom_errors::CustomError> {
                 "Download directory not found".to_string(),
             ));
         }
-    };
+    }
+}
 
-    let contents = match fs::read_dir(&download_dir) {
+fn get_content(download_dir: &Path) -> Result<fs::ReadDir, errors::custom_errors::CustomError> {
+    match fs::read_dir(download_dir) {
         Ok(iterator) => {
             tracing::info!("Download directory read successfully");
-            iterator
+            Ok(iterator)
         }
         Err(error) => {
             tracing::error!("Error reading the download directory: {:?}", error);
             return Err(errors::custom_errors::CustomError::Unknown);
         }
-    };
+    }
+}
+
+pub fn run_sorting() -> Result<(), errors::custom_errors::CustomError> {
+    let download_dir = get_download_dir()?;
+
+    let contents = get_content(&download_dir)?;
 
     // I know this is an abomination, I don't care
     tracing::info!("Sorting the files...");
     for entry in contents {
-        match entry {
-            Ok(direntry) => {
-                let path = direntry.path();
-                if let Some(pathstr) = path.to_str() {
-                    if let Some(ext) = Path::new(pathstr).extension().and_then(|s| s.to_str()) {
-                        tracing::info!("File extension found: {}", ext);
-                        let new_dir = download_dir.join(ext);
-                        if !new_dir.exists() {
-                            if let Err(error) = fs::create_dir(&new_dir) {
-                                tracing::error!("Error creating directory: {:?}", error);
-                                return Err(errors::custom_errors::CustomError::Unknown);
-                            }
-                            tracing::info!("Created directory: {:?}", new_dir);
-                        }
-                        let new_path = new_dir.join(direntry.file_name());
-                        if let Err(error) = fs::rename(&path, &new_path) {
-                            tracing::error!("Error moving file: {:?}", error);
-                            return Err(errors::custom_errors::CustomError::Unknown);
-                        }
-                        tracing::info!("Moved file {:?} to {:?}", path, new_path);
-                    } else {
-                        tracing::warn!("No file extension found for file: {}", pathstr);
-                    }
-                } else {
-                    tracing::error!("Error reading the path");
-                    return Err(errors::custom_errors::CustomError::Unknown);
-                }
-            }
+        let direntry = match entry {
+            Ok(direntry) => direntry,
             Err(error) => {
-                tracing::warn!("Error reading the download directory: {:?}", error);
+                tracing::error!("Error reading the download directory: {:?}", error);
+                continue;
             }
+        };
+
+        let path = direntry.path();
+        let pathstr = match path.to_str() {
+            Some(pathstr) => pathstr,
+            None => {
+                tracing::error!("Error reading the path");
+                return Err(errors::custom_errors::CustomError::Unknown);
+            }
+        };
+
+        let ext = match Path::new(pathstr).extension().and_then(|s| s.to_str()) {
+            Some(ext) => ext,
+            None => {
+                tracing::warn!("No file extension found for file: {}", pathstr);
+                continue;
+            }
+        };
+
+        tracing::info!("File extension found: {}", ext);
+        let new_dir = download_dir.join(ext);
+        if !new_dir.exists() {
+            if let Err(error) = fs::create_dir(&new_dir) {
+                tracing::error!("Error creating directory: {:?}", error);
+                // return Err(errors::custom_errors::CustomError::Unknown);
+                continue;
+            }
+            tracing::info!("Created directory: {:?}", new_dir);
         }
+
+        let new_path = new_dir.join(direntry.file_name());
+        if let Err(error) = fs::rename(&path, &new_path) {
+            tracing::error!("Error moving file: {:?}", error);
+            // return Err(errors::custom_errors::CustomError::Unknown);
+            continue;
+        }
+        tracing::info!("Moved file {:?} to {:?}", path, new_path);
     }
     Ok(())
 }

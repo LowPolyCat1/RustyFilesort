@@ -150,7 +150,7 @@ Don't forget to give the project a star! Thanks again!
 ### Top contributors
 
 <a href="https://github.com/LowPolyCat1/RustyFilesort/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=LowPolyCat1/autosort_downloads" alt="contrib.rocks image" />
+  <img src="https://contrib.rocks/image?repo=LowPolyCat1/RustyFilesort" alt="contrib.rocks image" />
 </a>
 
 <!-- LICENSE -->

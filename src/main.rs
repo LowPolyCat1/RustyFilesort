@@ -6,5 +6,13 @@ async fn main() {
     let (non_blocking, _guard) = tracing_appender::non_blocking(file_appender);
     tracing_subscriber::fmt().with_writer(non_blocking).init();
     tracing::info!("Hello, world!");
-    run_sorting().await;
+    match run_sorting().await {
+        Ok(_) => {
+            tracing::info!("Sorting process completed successfully");
+        }
+        Err(error) => {
+            tracing::error!("Error occurred: {:?}", error);
+            panic!("Error occurred: {:?}", error);
+        }
+    }
 }

@@ -29,7 +29,7 @@ iced = { version = "0.13.1", features = ["image"] }
 tray-item = { version = "0.10.0" }
 
 
-[build-dependencies]
+[target.'cfg(windows)'.build-dependencies]
 windows_exe_info = "0.4.2"
 
 

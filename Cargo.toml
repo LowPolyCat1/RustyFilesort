@@ -16,9 +16,9 @@ license-file = "./license.txt"
 tracing = "0.1.41"
 tracing-subscriber = "0.3.19"
 tracing-appender = "0.2.3"
-dirs = { version = "5.0.1" }
-thiserror = { version = "2.0.9" }
-tokio = { version = "1.42.0", features = ["full"] }
+dirs = { version = "6.0.0" }
+thiserror = { version = "2.0.11" }
+tokio = { version = "1.43.0", features = ["full"] }
 futures = "0.3.31"
 
 

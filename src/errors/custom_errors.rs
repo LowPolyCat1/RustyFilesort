@@ -11,6 +11,6 @@ pub enum CustomError {
     #[error("Invalid input: {0}")]
     InvalidInput(String),
 
-    #[error("Unknown error occurred")]
-    Unknown,
+    #[error("Unknown error occurred | Info: {0}")]
+    Unknown(String),
 }

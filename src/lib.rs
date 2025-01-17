@@ -1,96 +1,31 @@
+use iced;
+use tracing::instrument::WithSubscriber;
+
 #[cfg(test)]
 pub mod tests;
 
+pub mod application;
+pub mod auto_start;
 pub mod errors;
+pub mod sorting;
+pub mod tray;
 
-use dirs;
-use std::{
-    fs,
-    path::{Path, PathBuf},
-};
-use tokio;
+pub async fn run_programm() -> iced::Result {
+    let file_appender = tracing_appender::rolling::minutely("./logs", "debug.log");
+    let (non_blocking, _guard) = tracing_appender::non_blocking(file_appender);
+    tracing_subscriber::fmt().with_writer(non_blocking).init();
 
-pub fn get_download_dir() -> Result<PathBuf, errors::custom_errors::CustomError> {
-    match dirs::download_dir() {
-        Some(pathbuf) => {
-            tracing::info!("Download directory found: {:?}", pathbuf);
-            Ok(pathbuf)
-        }
-        None => {
-            tracing::error!("Could not find the download directory");
-            return Err(errors::custom_errors::CustomError::DirectoryNotFound(
-                "Download directory not found".to_string(),
-            ));
-        }
-    }
-}
+    tracing::info!("Hello, World! from RustyFilesort");
 
-pub fn get_content(download_dir: &Path) -> Result<fs::ReadDir, errors::custom_errors::CustomError> {
-    match fs::read_dir(download_dir) {
-        Ok(iterator) => {
-            tracing::info!("Download directory read successfully");
-            Ok(iterator)
-        }
-        Err(error) => {
-            tracing::error!("Error reading the download directory: {:?}", error);
-            return Err(errors::custom_errors::CustomError::Unknown);
-        }
-    }
-}
-
-pub fn run_sorting() -> Result<(), errors::custom_errors::CustomError> {
-    let download_dir = get_download_dir()?;
-
-    let contents = get_content(&download_dir)?;
-
-    // I know this is an abomination, I don't care
-    tracing::info!("Sorting the files...");
-    let mut futures = Vec::new();
-    for entry in contents {
-        let direntry = match entry {
-            Ok(direntry) => direntry,
-            Err(error) => {
-                tracing::error!("Error reading the download directory: {:?}", error);
-                continue;
-            }
-        };
-
-        let path = direntry.path();
-        let pathstr = match path.to_str() {
-            Some(pathstr) => pathstr,
-            None => {
-                tracing::error!("Error reading the path");
-                return Err(errors::custom_errors::CustomError::Unknown);
-            }
-        };
-
-        let extension = match Path::new(pathstr).extension().and_then(|s| s.to_str()) {
-            Some(extension) => extension,
-            None => {
-                tracing::warn!("No file extension found for file: {}", pathstr);
-                continue;
-            }
-        };
-
-        tracing::info!("File extension found: {}", extension);
-        let new_dir = download_dir.join(extension);
-        if !new_dir.exists() {
-            if let Err(error) = fs::create_dir(&new_dir) {
-                tracing::error!("Error creating directory: {:?}", error);
-                // return Err(errors::custom_errors::CustomError::Unknown);
-                continue;
-            }
-            tracing::info!("Created directory: {:?}", new_dir);
-        }
-
-        let new_path = new_dir.join(direntry.file_name());
-        futures.push(tokio::spawn(async move {
-            if let Err(error) = tokio::fs::rename(&path, &new_path).await {
-                tracing::error!("Error moving file: {:?}", error);
-            } else {
-                tracing::info!("Moved file {:?} to {:?}", path, new_path);
-            }
-        }));
-    }
-    Ok(())
+    iced::application(
+        "RustyFilesort",
+        application::iced_application::RustyFilesortApplication::update,
+        application::iced_application::RustyFilesortApplication::view,
+    )
+    .theme(application::iced_application::RustyFilesortApplication::theme)
+    .settings(application::settings::settings())
+    .window(application::settings::window_settings())
+    .with_current_subscriber()
+    .into_inner()
+    .run_with(application::iced_application::RustyFilesortApplication::new)
 }

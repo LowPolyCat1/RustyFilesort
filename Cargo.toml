@@ -8,6 +8,9 @@ description = "This Programm sorts the users download folder"
 license_file = "./license.txt"
 repository = "https://github.com/LowPolyCat1/RustyFilesort"
 publish = false
+readme = "./README.md"
+license-file = "./license.txt"
+
 
 [dependencies]
 tracing = "0.1.41"

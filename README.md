@@ -133,9 +133,10 @@ Use RustyFilesort to keep your downloads folder organized automatically. Simply 
 * [ ] Add support for custom sorting rules
 * [ ] Implement a GUI
 * [x] Asynchronous Sorting
-* [x] Add support for multiple folders
-* [ ] Add schedule support
-* [ ] Add config files
+* [ ] Support for multiple folders
+* [ ] Scheduling support
+* [ ] Config files
+* [ ] Automatic binary updating
 
 See the [open issues](https://github.com/LowPolyCat1/RustyFilesort/issues) for a full list of proposed features (and known issues).
 

@@ -13,6 +13,7 @@ license-file = "./license.txt"
 
 
 [dependencies]
+iced_aw = { version = "0.11.0" }
 tracing = "0.1.41"
 tracing-subscriber = "0.3.19"
 tracing-appender = "0.2.3"
@@ -20,6 +21,12 @@ dirs = { version = "6.0.0" }
 thiserror = { version = "2.0.11" }
 tokio = { version = "1.43.0", features = ["full"] }
 futures = "0.3.31"
+auto-launch = "0.5.0"
+serde = { version = "1.0.217" }
+serde_json = { version = "1.0.135" }
+iced = { version = "0.13.1", features = ["image"] }
+# image = { version = "0.25.5", features = ["ico"] }
+tray-item = { version = "0.10.0" }
 
 
 [build-dependencies]

@@ -1,4 +1,6 @@
+use auto_launch::AutoLaunch;
 use iced::{
+    exit,
     widget::{button, checkbox, column, text, Column},
     Task,
 };
@@ -40,9 +42,9 @@ impl RustyFilesortApplication {
                 } else {
                     Some(Message::StartSorting)
                 };
-                let auto_start =
-                    checkbox("Automatically start the App with Windows", self.auto_start)
-                        .on_toggle(Message::ToggleAutoStart);
+                // let auto_start =
+                //     checkbox("Automatically start the App with Windows", self.auto_start)
+                //         .on_toggle_maybe(Some(Message::ToggleAutoStart)); // TODO: auto_start is currently broken
                 let timed_sort_available = Some(Message::ToggleTimedSort);
                 let timed_sorting = checkbox(
                     "Automatically Sort Download Dir on specific time",
@@ -51,7 +53,7 @@ impl RustyFilesortApplication {
                 .on_toggle_maybe(timed_sort_available);
                 return column![
                     button("Start sorting").on_press_maybe(on_press),
-                    auto_start,
+                    // auto_start,
                     timed_sorting
                 ];
             }
@@ -103,8 +105,9 @@ impl RustyFilesortApplication {
         let auto_start_agent = initialize_auto_start();
         let mut auto_start = false;
         if auto_start_agent.is_some() {
-            auto_start = auto_start_agent.unwrap().is_enabled().unwrap(); // TODO: NEED TO REMOVE UNWRAPS
-                                                                          // TODO: NEED TO ADD ERROR DISPLAY LOGIC
+            auto_start = auto_start_agent.unwrap().is_enabled().unwrap();
+            // TODO: NEED TO REMOVE UNWRAPS
+            // TODO: NEED TO ADD ERROR DISPLAY LOGIC
         }
         (
             RustyFilesortApplication {

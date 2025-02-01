@@ -10,12 +10,12 @@ pub mod errors;
 pub mod sorting;
 pub mod tray;
 
-pub async fn run_programm() -> iced::Result {
+pub async fn run_gui() -> iced::Result {
     let file_appender = tracing_appender::rolling::minutely("./logs", "debug.log");
     let (non_blocking, _guard) = tracing_appender::non_blocking(file_appender);
     tracing_subscriber::fmt().with_writer(non_blocking).init();
 
-    tracing::info!("Hello, World! from RustyFilesort");
+    tracing::info!("Starting iced GUI");
 
     iced::application(
         "RustyFilesort",
@@ -25,7 +25,13 @@ pub async fn run_programm() -> iced::Result {
     .theme(application::iced_application::RustyFilesortApplication::theme)
     .settings(application::settings::settings())
     .window(application::settings::window_settings())
-    .with_current_subscriber()
-    .into_inner()
+    // .with_current_subscriber()
+    // .into_inner()
     .run_with(application::iced_application::RustyFilesortApplication::new)
+}
+
+pub async fn run_programm() {
+    // let tray = tray::application_tray::get_tray().await;
+
+    run_gui().await; // TODO handle result
 }

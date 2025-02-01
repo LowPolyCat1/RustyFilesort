@@ -3,7 +3,7 @@ name = "rusty_filesort"
 version = "0.2.0"
 edition = "2021"
 github = "lowpolycat1"
-authors = ["Julian Tepper <juliantepper2006+github@gmail.com>"]
+authors = ["lowpolycat1"]
 description = "This Programm sorts the users download folder"
 license_file = "./license.txt"
 repository = "https://github.com/LowPolyCat1/RustyFilesort"
@@ -23,10 +23,14 @@ tokio = { version = "1.43.0", features = ["full"] }
 futures = "0.3.31"
 auto-launch = "0.5.0"
 serde = { version = "1.0.217" }
-serde_json = { version = "1.0.135" }
+serde_json = { version = "1.0.137" }
 iced = { version = "0.13.1", features = ["image"] }
 # image = { version = "0.25.5", features = ["ico"] }
-tray-item = { version = "0.10.0" }
+tray-icon = "0.19.2"
+
+
+# [target.'cfg(windows)'.dependencies]
+# tray-icon-win = "0.1.5"
 
 
 [target.'cfg(windows)'.build-dependencies]
